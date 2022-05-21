@@ -11,7 +11,7 @@
  _ _ _
  ## *Description*
  ### Week 21 Submission: MERN Challenge: Book Search Engine
- The task was to take a fully functioning Google Books API search engine build with RESTful API and refactor to be a GraphQL API built with Apollo Server.  The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API.
+  The task was to take a fully functioning Google Books API search engine build with RESTful API and refactor to be a GraphQL API built with Apollo Server.  The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API.
  Completed the following challenge tasks -  
 
  - 1) Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
@@ -19,11 +19,11 @@
  - 3) Created an Apollo Provider so requests can communicate with an Apollo Server
  - 4) Deployed the application to Heroku
    
-  The app allows all users to search for books utilizing the Google Book Search API. The search returns books relavent to the search criteria. Each book includes its cover-art the Title, Author(s) and a description of the book.
+  The app allows all users to search for books utilizing the Google Book Search API. The search returns books relevant to the search criteria. Each book includes its cover-art the Title, Author(s) and a description of the book.
   
-  If the user is logged in, the book will include a "Save this Book!" button below the description, which the user may click to store that particular book in their personal profile. The stored books will persist for that users the next time the log on.
+  If the user is logged in, the book will include a "Save this Book!" button below the description, which the user may click to store that particular book in their personal profile. The stored books will persist for that user the next time they log on.
   
-  If a user doesn't have an account, they may signup for one by clicking the "Sign Up" button on the login in page. Once they have successfully created an account they will be logged in.
+  If a user doesn't have an account, they may sign up for one by clicking the "Sign Up" button on the login in page. Once they have successfully created an account, they will be logged in.
 
  ![Screen Shot](./client/src/screen-shot.png)
  _ _ _
