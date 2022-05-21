@@ -16,3 +16,13 @@
             }
         }
     }`
+
+export const QUERY_USERS = gql `
+    {
+        users {
+            _id
+            username
+            email
+        }
+    }
+`
