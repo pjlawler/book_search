@@ -78,6 +78,10 @@ const SearchBooks = () => {
         variables: { bookData: bookToSave }
       });
 
+      if(!data) {
+        console.log("")
+      }
+
       if (error) {
         throw new Error('something went wrong!');
       }

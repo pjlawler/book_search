@@ -13,6 +13,10 @@ const SavedBooks = () => {
 
   // sets up the userData state store
   const [userData, setUserData] = useState({});
+  
+  if(!userData) {
+    console.log("")
+  }
 
   // sets up the mutation to remove a book from the user's saved books
   const [deleteBook, { error }] = useMutation(REMOVE_BOOK)
