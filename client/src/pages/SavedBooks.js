@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-
-import { deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 import { useQuery, useMutation } from '@apollo/client';
@@ -9,16 +7,15 @@ import { QUERY_ME } from '../utils/queries'
 import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
+  
+  // sets up the userData state store
   const [userData, setUserData] = useState({});
 
-  // use this to determine if `useEffect()` hook needs to run again
-  // const userDataLength = Object.keys(userData).length;
-
+  // sets up the query to get the logged in user's data
   const { data: user, loading } = useQuery(QUERY_ME);
-  // setUserData(user);
 
+  // sets up the mutation to remove a book from the user's saved books
   const [deleteBook, { error }] = useMutation(REMOVE_BOOK)
-
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
