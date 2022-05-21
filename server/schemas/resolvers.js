@@ -10,7 +10,6 @@ const resolvers = {
         if (context.user) {
           const user = await User.findOne({ _id: context.user._id })
           .select(['-__v -password'])
-          console.log(user);
 
           if (!user) throw new AuthenticationError(`No Data Returned: ${context.user._id}`)
           return user;
@@ -40,8 +39,6 @@ const resolvers = {
       
       login: async (parent, { email, password }) => {
         
-        
-
         const user = await User.findOne({ email });
   
         if (!user) {
@@ -57,7 +54,7 @@ const resolvers = {
         }
   
         const token = signToken(user);
-        console.log(token, user);
+
         return {token, user} ;
       },
 
@@ -76,7 +73,7 @@ const resolvers = {
       },
 
       removeBook: async (parent, { bookId }, context) => {
-        console.log(context.user._id);
+
         if (context.user) {
           const user = await User.findByIdAndUpdate(
             { _id: context.user._id },

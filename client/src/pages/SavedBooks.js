@@ -8,11 +8,11 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
   
-  // sets up the userData state store
-  const [userData, setUserData] = useState({});
-
   // sets up the query to get the logged in user's data
   const { data: user, loading } = useQuery(QUERY_ME);
+
+  // sets up the userData state store
+  const [userData, setUserData] = useState({});
 
   // sets up the mutation to remove a book from the user's saved books
   const [deleteBook, { error }] = useMutation(REMOVE_BOOK)
@@ -36,6 +36,7 @@ const SavedBooks = () => {
 
       // const updatedUser = await response.json();
       setUserData(updatedUser);
+
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
